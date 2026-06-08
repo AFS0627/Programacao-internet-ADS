@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;height: 100px;border: 1px solid black;
+            animation: move 2s infinite;
+            background-color: cyan;
+        }
+        #container{
+            border:1px solid black;
+        }
+         @keyframes move{
+                0%{transform: translatex(0);}
+                50%{transform: translatex(50vw);background-color: red;}
+                100%{transform: translatex(100vw); border-radius: 50%;}
+            }
+            @keyframes foguete{
+               from{bottom:0px}to{bottom:100vh}
+            }
+            span{animation: foguete 5s infinite;
+                font-size: 30px;
+                position:fixed;
+                bottom:0px;
+                left:50%;
+                font-size: 50px;
+            }
+    </style>
+</head>
+<body>
+    <div class ="descricao">
+        <h1>animate</h1>
+        <p>animate anima as coisa definindo inicio passo ou fim da animacao
+        </p>
+        <p>Exemplo: </p>
+       <div id="container">
+        <div id="box1">box1</div>
+        <div id="box2">box2</div>
+        <div id="box3">box3</div>
+        <div id="box4">box4</div>
+        <div id="box5">box5</div>
+    </div>
+    </div>
+    <span>🚀</span>
+</body>
+</html>
