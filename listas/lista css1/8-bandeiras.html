@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Bandeiras</title>
+
+<style>
+    .bandeira{
+        width: 300px;
+        height: 180px;
+        border: 1px solid black;
+        margin: 20px 0;
+        position: relative;
+    }
+
+    /* JAPÃO */
+    #japao.bandeira{
+        background: white;
+    }
+
+    #japao.bandeira > div.circulo{
+        width: 80px;
+        height: 80px;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* ALEMANHA */
+    #alemanha.bandeira{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #alemanha.bandeira > div{
+        flex: 1;
+    }
+
+    #alemanha.bandeira > div.preto{
+        background: black;
+    }
+
+    #alemanha.bandeira > div.vermelho{
+        background: red;
+    }
+
+    #alemanha.bandeira > div.amarelo{
+        background: gold;
+    }
+
+    /* HOLANDA */
+    #holanda.bandeira{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #holanda.bandeira > div{
+        flex: 1;
+    }
+
+    #holanda.bandeira > div.vermelho{
+        background: red;
+    }
+
+    #holanda.bandeira > div.branco{
+        background: white;
+    }
+
+    #holanda.bandeira > div.azul{
+        background: blue;
+    }
+
+    /* ITÁLIA */
+    #italia.bandeira{
+        display: flex;
+    }
+
+    #italia.bandeira > div{
+        flex: 1;
+    }
+
+    #italia.bandeira > div.verde{
+        background: green;
+    }
+
+    #italia.bandeira > div.branco{
+        background: white;
+    }
+
+    #italia.bandeira > div.vermelho{
+        background: red;
+    }
+
+    /* BRASIL */
+    #brasil.bandeira{
+        background: green;
+    }
+
+    #brasil.bandeira > div.losango{
+        width: 180px;
+        height: 180px;
+        background: yellow;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    #brasil.bandeira > div.circulo{
+        width: 80px;
+        height: 80px;
+        background: blue;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Menu</h2>
+
+<a href="#japao">Bandeira Japão</a><br>
+<a href="#alemanha">Bandeira Alemanha</a><br>
+<a href="#holanda">Bandeira Holanda</a><br>
+<a href="#italia">Bandeira Itália</a><br>
+<a href="#brasil">Bandeira Brasil</a><br>
+
+<hr>
+
+<h3>Japão</h3>
+<div id="japao" class="bandeira">
+    <div class="circulo"></div>
+</div>
+
+<h3>Alemanha</h3>
+<div id="alemanha" class="bandeira">
+    <div class="preto"></div>
+    <div class="vermelho"></div>
+    <div class="amarelo"></div>
+</div>
+
+<h3>Holanda</h3>
+<div id="holanda" class="bandeira">
+    <div class="vermelho"></div>
+    <div class="branco"></div>
+    <div class="azul"></div>
+</div>
+
+<h3>Itália</h3>
+<div id="italia" class="bandeira">
+    <div class="verde"></div>
+    <div class="branco"></div>
+    <div class="vermelho"></div>
+</div>
+
+<h3>Brasil</h3>
+<div id="brasil" class="bandeira">
+    <div class="losango"></div>
+    <div class="circulo"></div>
+</div>
+
+</body>
+</html>

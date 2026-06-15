@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Chat</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f0f0f0;
+    font-family:Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+.chat{
+    width:500px;
+    background:#eee;
+    border:1px solid #ccc;
+    padding:10px;
+}
+
+.nome{
+    color:gray;
+    font-size:12px;
+    margin-bottom:2px;
+}
+
+.msg{
+    padding:10px;
+    border-radius:4px;
+    margin-bottom:5px;
+    position:relative;
+}
+
+.recebida{
+    background:white;
+    border:1px solid #ccc;
+}
+
+.enviada{
+    background:#c8e6c9;
+    border:1px solid #a5d6a7;
+}
+
+.horario{
+    font-size:11px;
+    color:gray;
+    text-align:right;
+    margin-top:5px;
+}
+
+.entrada{
+    margin-top:15px;
+    border:1px solid #ccc;
+    padding:10px;
+    background:#f7f7f7;
+}
+
+textarea{
+    width:100%;
+    height:80px;
+    resize:none;
+    padding:10px;
+}
+
+.botoes{
+    text-align:right;
+    margin-top:5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="chat">
+
+    <div class="nome">Pedro Silva.</div>
+    <div class="msg recebida">
+        Olá, tudo bem?
+        <div class="horario">00:50</div>
+    </div>
+
+    <div class="nome">Eu</div>
+    <div class="msg enviada">
+        Estou bem sim, e você?
+        <div class="horario">00:55</div>
+    </div>
+
+    <div class="nome">Pedro Silva.</div>
+    <div class="msg recebida">
+        Vamos sair hoje? sabe conversar e Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Illum ducimus
+        <div class="horario">01:01</div>
+    </div>
+
+    <div class="nome">Eu</div>
+    <div class="msg enviada">
+        Criatura .....
+        <div class="horario">00:55</div>
+    </div>
+
+    <div class="entrada">
+        <textarea placeholder="Digite sua mensagem"></textarea>
+
+        <div class="botoes">
+            <button>Enviar</button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

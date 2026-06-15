@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Barco</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        #ceu{
+            background-color: rgb(220,240,250);
+            height:75vh;
+            position:relative;
+        }
+
+        #mar{
+            background-color: rgb(70,80,255);
+            height:25vh;
+        }
+
+        #nuvem{
+            width:80px;
+            height:30px;
+            background:white;
+            border-radius:20px;
+            position:absolute;
+            top:100px;
+            left:0;
+        }
+
+        #barco{
+            position:absolute;
+            left:50%;
+            top:75%;
+            transform:translate(-50%,-50%);
+            font-size:80px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="ceu">
+        <div id="nuvem"></div>
+        <div id="barco">⛵</div>
+    </div>
+
+    <div id="mar"></div>
+
+</body>
+</html>
