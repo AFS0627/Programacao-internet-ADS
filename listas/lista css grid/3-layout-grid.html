@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>grid</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-areas: 
+            "a a a" 
+            "b c d"
+            "e c f"
+            "e g g";
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: 25vh 25vh 25vh 25vh;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10%;
+            
+
+        }
+        #box2,#box4,#box6{
+            background-color: red;
+
+        }
+        #box1,#box3,#box5,#box7{
+            background-color: yellow;
+        }
+        #box1{
+            grid-area: a;
+        }
+        #box2{
+            grid-area: b;
+        }
+        #box3{
+            grid-area: c;
+        }
+        #box4{
+            grid-area: d;
+        }
+        #box5{
+            grid-area: e;
+        }
+        #box6{
+            grid-area: f;
+        }
+        #box7{
+            grid-area: g;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box5">5</div>
+        <div class="box" id="box6">6</div>
+        <div class="box" id="box7">7</div>
+    </div>
+
+</body>
+</html>

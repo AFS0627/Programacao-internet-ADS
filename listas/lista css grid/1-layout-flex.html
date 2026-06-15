@@ -1,0 +1,48 @@
+<!doctype html>
+<head>
+    <title>flex</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-areas: 
+            "navegacao  cabecalho"
+            "navegacao conteudo"
+            "navegacao rodape";
+            grid-template-rows: 20vh 60vh 20vh;
+            grid-template-columns:20% 80%  ;
+        }
+        .box{
+            color:white;
+            display: flex;
+            justify-content: center;
+        }
+        #box1{
+            color: white;
+            
+            background-color: orange;
+            grid-area: navegacao;
+        }
+        #box2{
+            background-color: aqua;
+            grid-area: cabecalho;
+        }
+        #box3{
+            background-color: purple;
+            grid-area:conteudo;
+        }
+        #box4{
+            background-color: blue;
+            grid-area: rodape;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">navegação</div>
+        <div class="box" id="box2">cabeçalho</div>
+        <div class="box" id="box3">conteudo</div>
+        <div class="box" id="box4">rodape</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Layout Grid</title>
+    <style>
+        .container{
+            display: grid;
+            width: 600px;
+            height: 400px;
+
+            grid-template-areas:
+                "a a a b"
+                "c c d b"
+                "e e d b"
+                "e e f f";
+
+            grid-template-columns: 2fr 2fr 1fr 1fr;
+            grid-template-rows: repeat(4, 1fr);
+
+            gap: 5px;
+        }
+
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        #box1{
+            grid-area: a;
+            background: #9fb3cc;
+        }
+
+        #box2{
+            grid-area: b;
+            background: #e7ad2c;
+        }
+
+        #box3{
+            grid-area: c;
+            background: #c9a9a9;
+        }
+
+        #box4{
+            grid-area: d;
+            background: #c8dede;
+        }
+
+        #box5{
+            grid-area: e;
+            background: #e6b8a9;
+        }
+
+        #box6{
+            grid-area: f;
+            background: #b6c66d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box5">5</div>
+    <div class="box" id="box6">6</div>
+</div>
+
+</body>
+</html>
