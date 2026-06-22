@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é JavaScript?</title>
+</head>
+<body>
+    <h1>O que é JavaScript?</h1>
+    <p id="p1">Em meados dos anos 90 a web se popularizou rapidamente e com o crescimento houve a necessidade de mais iteratividade na interface
+        do cliente, o que seria possível uma linguagem de programação que fosse executada no navegador do usuário, tendo acesso ao Documento 
+        HTML da página e seus artefatos de código.
+    </p>
+    <p id="p2">Surgiram diversas propostas na industria, mas a qu se popularizou foi a linguagem de script , criada na NetScape denominada de ECMA-267, conhecida popularmente como 
+        javaScript 
+    </p>
+    <p id="p3">
+       o JS é executado no navegador dentro de um <i>sandbox</i> que limita as operações e acesso do código executado, fornecendo operações e variáveis
+       limitando o acesso a rede, disco além de entrada e saída. Esse conceito é fundamental na web, em que código de terceiros podem ser baixados
+       e executados na maquina do cliente
+    </p>
+    <p id="p4">
+        quando o interpretador javaScript executa um script, ele disponibiliza algumas variáveis globais, que fornecem acesso ao ambiente.
+        No node por exemplo a variável process force acesso a o sistema operacional e dispositivos de entradas e saída. Já no navegador o JS é executado em um sandbox que tem acesso 
+        a um objeto global denominado windows, que representa a janela e tem dezenas de propriedades que fornecem acesso ao console,document,history,screen e além de funções.
+    </p>
+
+    <script>
+        let pdata = document.createElement("p");
+        pdata.id ="pdata";
+
+        setInterval(()=>{
+            let date = new Date();
+
+        pdata.innerHTML= `Data e hora atual: ${date.toLocaleString()}`;
+        document.body.appendChild(pdata);},1000);
+
+        function pararAtualizacao(){
+            clearInterval(intervalo);
+        }
+
+            let button = document.createElement("button");
+            button.addEventListener("click", )
+            button.innerHTML="parar atualização";
+            document.body.appendChild(button);
+
+        
+
+    </script>
+</body>
+</html>
