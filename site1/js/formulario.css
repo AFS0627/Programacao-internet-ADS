@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+
+}
+*{
+    text-align: center;
+    border-radius: 10px;
+}
+.submit{
+    border-radius: 20%;
+    background-color: greenyellow;
+    font-size:17px;
+
+}

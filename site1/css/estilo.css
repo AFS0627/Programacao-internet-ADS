@@ -1,0 +1,75 @@
+body{
+    background-image:url("../danonangos.webp");
+background-size:contain;
+background-repeat:no-repeat;
+
+
+}
+h1, h2, h3{
+    color:gray;
+    font-size:100px;
+}
+.center{
+    text-align:center;
+}
+p{
+    color:yellowgreen;
+}
+/*cria uma classe fonte 30*/
+.fonte-30{
+    font-size:30px;
+}
+/*seleciona o identificador*/
+#teste{
+    color:blue;
+    background:yellow;
+}
+/*seleciona todos os elementos da pagina*/
+*{
+    padding:20px;
+}
+
+/*backgroung paramentros*/
+seletor{
+height: 300px;
+background:url("imagem.png");
+background-size:cover;
+}
+/*border paramentros*/
+.classe{
+    border:1px solid black; /*tamanho da borda em pixels solida da cor preta*/
+border:1px dotted black;/*tamanho da borda em pixels com pontinhos da cor preta*/
+border:1px dashed black;/*tamanho da borda em pixels com tracinhos da cor preta*/
+border:1px hidden black;/*tamanho da borda em pixels não aparece está oculta*/
+border-top:5px solid yellow;/*borda de cima*/
+border-radius:30px;/*borda arredondada*/
+}
+/*propriedade margin para afastar elementos*/
+#id{
+margin-top:50px;/*afasta do topo 50px*/
+margin-bottom:50px;/*afasta de baixo 50pc*/
+}
+/*padding afastamento dentro do elemento*/
+.classe{
+padding-top:50px;
+padding:50px;/*aplica de todos os lados*/
+padding: 50px 70px 20px 10px;/*sentido horario começando no topo*/
+}
+/*PROPRIEDADE TEXT*/
+#id{
+    text-align: center;/*alinha texto ao centro*/
+    text-decoration:none;/*tira decoração dos textos ex: tirar linha em baixo dos links*/
+    text-transform:uppercase;/*tudo fica maiusculo*/
+    text-transform:capitalize;/*primeira letra sempre maiuscula*/
+    text-indent:60px;/*efeito de paragrafo*/
+    letter-spacing:2px; /*espaçamento entre letras pode colocar valores negativos*/
+    line-height:4;/*tamanho liha*/
+}
+/*propriedade font*/
+.classe{
+font-family:Arial, Helvetica, sans-serif;/*muda a fonte*/
+font-size:30px;/*tamanho da fonte*/
+font-style:italic;/*colocar italico*/
+font-weight:bold;/*colocar fonte em negrito ou engrossar a letra*/
+
+}
