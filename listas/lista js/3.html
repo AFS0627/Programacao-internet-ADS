@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>IMC</h1>
+    <input type="number" id="peso" step="0.1">
+    <input type="number" id="altura" step="0.01">
+    <button>Calcular</button>
+    <p id="resultadoIMC"></p>
+    <p id="classificacao"></p>
+    <img id="imgPerfil">
+
+    <script>
+    const pesoInput = document.getElementById("peso");
+    const alturaInput = document.getElementById("altura");
+    const resultadoIMC = document.getElementById("resultadoIMC");
+    const classificacao = document.getElementById("classificacao");
+    const imgPerfil = document.getElementById("imgPerfil");
+    const button = document.querySelector("button");
+
+    function calcularIMC(peso, altura) {
+        return peso / (altura * altura);
+    }
+
+    button.addEventListener("click", () => {
+        const peso = parseFloat(pesoInput.value);
+        const altura = parseFloat(alturaInput.value);
+
+
+        const imc = calcularIMC(peso, altura);
+
+        resultadoIMC.textContent = `Seu IMC é: ${imc}`;
+
+        
+       
+
+        if (imc < 18.5) {
+            classificacao.textContent =  "Abaixo do peso";
+            imgPerfil.src = "imagens/abaixopeso.jpg";
+            
+        } 
+        else if (imc < 24.9) {
+            classificacao.textContent = "Peso normal";
+           
+        } 
+        else if (imc < 29.9) {
+            classificacao.textContent = "Sobrepeso";
+           
+        } 
+        else {
+            classificacao.textContent =  "Obesidade";
+            
+        }
+
+        
+        
+    });
+    </script>
+</body>
+</html>

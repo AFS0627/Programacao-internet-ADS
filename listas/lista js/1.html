@@ -26,25 +26,35 @@
     </p>
 
     <script>
-        let pdata = document.createElement("p");
-        pdata.id ="pdata";
+    let pdata = document.createElement("p");
+pdata.id = "pdata";
+document.body.appendChild(pdata);
 
-        setInterval(()=>{
-            let date = new Date();
+let intervalo = setInterval(atualizarHora, 1000);
 
-        pdata.innerHTML= `Data e hora atual: ${date.toLocaleString()}`;
-        document.body.appendChild(pdata);},1000);
+function atualizarHora() {
+    let date = new Date();
+    pdata.innerHTML = `Data e hora atual: ${date.toLocaleString()}`;
+}
 
-        function pararAtualizacao(){
-            clearInterval(intervalo);
-        }
+function pararAtualizacao() {
+    clearInterval(intervalo);
+    intervalo = null;
+}
 
-            let button = document.createElement("button");
-            button.addEventListener("click", )
-            button.innerHTML="parar atualização";
-            document.body.appendChild(button);
-
-        
+function voltarAtualizacao() {
+  
+        intervalo = setInterval(atualizarHora, 1000);
+    
+}
+let button = document.createElement("button");
+button.addEventListener("click", pararAtualizacao);
+button.innerHTML = "parar atualização";
+document.body.appendChild(button);
+let button2 = document.createElement("button");
+button2.addEventListener("click", voltarAtualizacao);
+button2.innerHTML = "voltar atualização";
+document.body.appendChild(button2);
 
     </script>
 </body>
