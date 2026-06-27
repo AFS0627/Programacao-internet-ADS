@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>9.html</title>
+
+<style>
+
+body{
+text-align:center;
+font-family:Arial;
+}
+
+input{
+width:80px;
+margin:5px;
+}
+
+button{
+width:40px;
+height:40px;
+margin:3px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Calculadora</h2>
+
+<input type="number" id="n1">
+<input type="number" id="n2">
+
+<br><br>
+
+<button onclick="calcular('+')">+</button>
+<button onclick="calcular('-')">-</button>
+<button onclick="calcular('*')">*</button>
+<button onclick="calcular('/')">/</button>
+
+<h3 id="resultado">Resultado: 0</h3>
+
+<script>
+
+function calcular(op){
+
+let n1 = Number(document.getElementById("n1").value);
+let n2 = Number(document.getElementById("n2").value);
+
+let res = 0;
+
+if(op == "+"){
+res = n1 + n2;
+}
+
+if(op == "-"){
+res = n1 - n2;
+}
+
+if(op == "*"){
+res = n1 * n2;
+}
+
+if(op == "/"){
+if(n2 == 0){
+document.getElementById("resultado").innerText = "Não é possível dividir por zero.";
+return;
+}
+res = n1 / n2;
+}
+
+document.getElementById("resultado").innerText = "Resultado: " + res;
+
+}
+
+</script>
+
+</body>
+</html>

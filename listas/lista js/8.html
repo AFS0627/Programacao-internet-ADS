@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>8.html</title>
+
+<style>
+
+body{
+display:flex;
+justify-content:center;
+margin-top:50px;
+}
+
+.caixa{
+width:140px;
+height:100px;
+display:flex;
+align-items:flex-end;
+justify-content:center;
+font-size:25px;
+font-weight:bold;
+padding-bottom:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="caixa"></div>
+<div class="caixa"></div>
+<div class="caixa"></div>
+<div class="caixa"></div>
+<div class="caixa"></div>
+
+<script>
+
+let caixas = document.querySelectorAll(".caixa");
+
+function corAleatoria(){
+
+let letras = "0123456789ABCDEF";
+let cor = "#";
+
+for(let i=0;i<6;i++){
+cor += letras[Math.floor(Math.random()*16)];
+}
+
+return cor;
+
+}
+
+function trocarCores(){
+
+for(let i=0;i<caixas.length;i++){
+
+let cor = corAleatoria();
+
+caixas[i].style.backgroundColor = cor;
+caixas[i].innerText = cor;
+
+}
+
+}
+
+trocarCores();
+
+document.addEventListener("keydown",function(event){
+
+if(event.code == "Space"){
+event.preventDefault();
+trocarCores();
+}
+
+});
+
+</script>
+
+</body>
+</html>

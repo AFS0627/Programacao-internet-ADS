@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>7.html</title>
+</head>
+
+<body>
+
+<h2>Mudar Cor de Fundo</h2>
+
+<button onclick="mudarCor()">Trocar Cor</button>
+
+<script>
+
+function mudarCor(){
+
+let r = Math.floor(Math.random() * 256);
+let g = Math.floor(Math.random() * 256);
+let b = Math.floor(Math.random() * 256);
+
+document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+
+}
+
+</script>
+
+</body>
+</html>

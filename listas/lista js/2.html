@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exercício 2</title>
+</head>
+
+<body>
+
+<h2>Tipos de dados</h2>
+
+<button onclick="mostrar()">Mostrar</button>
+
+<p id="pstring"></p>
+<p id="pnumero"></p>
+<p id="pboolean"></p>
+<p id="pundefined"></p>
+<p id="pnull"></p>
+<p id="pobject"></p>
+<p id="parray"></p>
+
+<p id="op1"></p>
+<p id="op2"></p>
+<p id="op3"></p>
+<p id="op4"></p>
+
+<script>
+
+function mostrar(){
+
+let texto = "Olá";
+let numero = 10;
+let logico = true;
+let indefinido;
+let nulo = null;
+let pessoa = {nome:"Arthur"};
+let lista = [1,2,3];
+
+document.getElementById("pstring").innerText = "String: " + typeof texto;
+document.getElementById("pnumero").innerText = "Number: " + typeof numero;
+document.getElementById("pboolean").innerText = "Boolean: " + typeof logico;
+document.getElementById("pundefined").innerText = "Undefined: " + typeof indefinido;
+document.getElementById("pnull").innerText = "Null: " + typeof nulo;
+document.getElementById("pobject").innerText = "Object: " + typeof pessoa;
+document.getElementById("parray").innerText = "Array: " + typeof lista;
+
+console.log(texto + numero);
+console.log(logico * numero);
+console.log(numero + logico);
+console.log(texto * numero);
+
+document.getElementById("op1").innerText = '"Olá" + 10 = ' + (texto + numero) + " -> junta o texto com o número.";
+document.getElementById("op2").innerText = "true * 10 = " + (logico * numero) + " -> true vale 1.";
+document.getElementById("op3").innerText = "10 + true = " + (numero + logico) + " -> true vale 1, resultado 11.";
+document.getElementById("op4").innerText = '"Olá" * 10 = ' + (texto * numero) + " -> retorna NaN porque não dá para multiplicar texto.";
+
+}
+
+</script>
+
+</body>
+</html>

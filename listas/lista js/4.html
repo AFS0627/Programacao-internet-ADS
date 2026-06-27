@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>4.html</title>
+</head>
+
+<body>
+
+<h1>Sorteio de Números</h1>
+
+Mínimo:
+<input type="number" id="min">
+
+Máximo:
+<input type="number" id="max">
+
+<button onclick="sortear()">Sortear</button>
+
+<p id="resultado"></p>
+
+<ul id="lista"></ul>
+
+<script>
+
+let sorteados = [];
+
+function sortear(){
+
+let min = Number(document.getElementById("min").value);
+let max = Number(document.getElementById("max").value);
+
+if(min > max){
+alert("Intervalo inválido");
+return;
+}
+
+let numero = Math.floor(Math.random() * (max - min + 1)) + min;
+
+document.getElementById("resultado").innerText = "Número sorteado: " + numero;
+
+let achou = false;
+
+for(let i=0;i<sorteados.length;i++){
+if(sorteados[i].numero == numero){
+sorteados[i].vezes++;
+achou = true;
+break;
+}
+}
+
+if(!achou){
+sorteados.push({numero: numero, vezes: 1});
+}
+
+let lista = document.getElementById("lista");
+lista.innerHTML = "";
+
+for(let i=0;i<sorteados.length;i++){
+lista.innerHTML += "<li>" + sorteados[i].numero + " - sorteado " + sorteados[i].vezes + " vez(es)</li>";
+}
+
+}
+
+</script>
+
+</body>
+</html>
