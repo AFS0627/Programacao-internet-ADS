@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora
+    </title>
+
+    <style>
+        
+
+
+#calculadora{
+    
+width:400px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr 1fr 1fr;
+gap:5px;
+}
+
+#visor{
+grid-column:1/5;
+height:70px;
+border:1px solid black;
+font-size:30px;
+text-align:right;
+padding-right:10px;
+line-height:70px;
+}
+
+.botao{
+height:70px;
+font-size:20px;
+}
+#igual{
+    height: 300px;
+    grid-column:4;
+grid-row:3/7;
+background-color:aqua;
+
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="calculadora">
+        <div id="visor"></div>
+        <button class="botao" onclick="adiciona('+')">+</button>
+        <button class="botao" onclick="adiciona('-')">-</button>
+        <button class="botao" onclick="adiciona('*')">x</button>
+        <button class="botao" onclick="adiciona('/')">/</button>
+
+        <button class="botao" onclick="adiciona('7')">7</button>
+        <button class="botao" onclick="adiciona('8')">8</button>
+        <button class="botao" onclick="adiciona('9')">9</button>
+        <button class="botao" onclick="adiciona('4')">4</button>
+        <button class="botao" onclick="adiciona('5')">5</button>
+        <button class="botao" onclick="adiciona('6')">6</button>
+        <button class="botao" onclick="adiciona('1')">1</button>
+        <button class="botao" onclick="adiciona('2')">2</button>
+        <button class="botao" onclick="adiciona('3')">3</button>
+        <button class="botao" onclick="adiciona('0')">0</button>
+        <button class="botao" onclick="adiciona('.')">.</button>
+        <button class="botao" onclick="limpa()">C</button>
+        <button id="igual" class="botao" onclick="calcula()">=</button>
+
+    </div>
+
+
+    <script>
+      let conta = "";
+
+function adiciona(valor){
+    conta += valor;
+    visor.innerHTML = conta;
+}
+
+function limpa(){
+    conta = "";
+    visor.innerHTML = "";
+}
+
+function calcula(){
+    let validacao = /^[0-9+\-*/.]+$/;
+    if(!validacao.test(conta)){
+        alert("não é uma conta matematica");
+        return;
+    }
+    conta = conta;
+    visor.innerHTML = eval(conta);
+    conta = visor.innerHTML;
+}
+
+    </script>
+</body>
+</html>
