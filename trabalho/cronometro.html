@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cronometro</title>
+    <style>
+  body{
+    display:flex;
+    height:100vh;
+    margin:0;
+}
+
+#cronometro{
+    width:60%;
+    height:100%;
+    background-color:gray;
+    text-align:center;
+}
+
+#paradas{
+    width:40%;
+    height:100%;
+    background-color:aliceblue;
+    text-align: center;
+}
+
+#tempo{
+    font-size:100px;
+    margin-top:30%;
+    color:white;
+}
+
+.botao{
+    width:120px;
+    height:70px;
+    font-size:20px;
+    margin:10px;
+    margin-top:10%;
+    border-radius:20%;
+    background-color:azure;
+}
+
+.botao:hover{
+    background-color:antiquewhite;
+}
+
+h2{
+    text-align:center;
+    font-size: 30px;
+}
+#paradastexto{
+    font-size:40px;
+}
+#zerar{
+    position:absolute;
+    top: 60%;
+    right: 15%;
+
+}
+    </style>
+</head>
+<body>
+    <div id="cronometro">
+        <p id="tempo"></p>
+        <button id="iniciar" class="botao">iniciar</button>
+        <button id="pausar" class="botao">pausar</button>
+        <button id="parar" class="botao">parar</button>
+        
+    </div>
+    <div id=paradas>
+        <h2>Paradas</h2>
+        <p id="paradastexto"></p>
+        <button id="zerar" class="botao">zerar</button>
+
+    </div>
+    <script>
+
+let inicio;
+let intervalo = null;
+let i=1;
+let tempoPausado = 0;
+
+function atualizar(){
+    let tempo = Date.now() - inicio;
+    let data = new Date(tempo);
+    tempoTexto.innerHTML = data.toLocaleTimeString("pt-BR",{
+        timeZone:"UTC"});
+}
+
+function iniciar(){
+
+    if(intervalo !=null){
+        return;
+    }
+
+    inicio =Date.now()-tempoPausado;
+
+
+    atualizar();
+    intervalo =setInterval(atualizar,1000);
+}
+
+function pausar(){
+    if(intervalo ==null){
+        return;
+    }
+    tempoPausado = Date.now() - inicio;
+    clearInterval(intervalo);
+    intervalo = null;
+    paradastexto.innerHTML += i + " - " + tempoTexto.innerHTML + "<br>";
+    i+= 1;
+}
+
+function parar(){
+
+    clearInterval(intervalo);
+    intervalo = null;
+    tempoPausado = 0;
+    tempoTexto.innerHTML ="00:00:00";
+
+}
+function zerar(){
+    paradastexto.innerHTML ="";
+    i = 1;
+}
+
+let tempoTexto = document.getElementById("tempo");
+tempoTexto.innerHTML = "00:00:00";
+
+let iniciarBotao =document.getElementById("iniciar");
+let pausarBotao =document.getElementById("pausar");
+let pararBotao =document.getElementById("parar");
+let zerarBotao =document.getElementById("zerar");
+
+iniciarBotao.addEventListener("click",iniciar);
+pausarBotao.addEventListener("click",pausar);
+pararBotao.addEventListener("click",parar);
+zerarBotao.addEventListener("click",zerar);
+
+document.addEventListener("keydown",function(pressionado){
+    if(pressionado.key =="1"){
+        iniciar();
+    }
+    if(pressionado.key =="2"){
+        pausar();
+    }
+    if(pressionado.key =="3"){
+        parar();
+    }
+    if(pressionado.key =="4"){
+        zerar();
+    }
+});
+
+</script>
+</body>
+</html>
