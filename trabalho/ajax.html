@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buscaFilme</title>
+    <style>
+        *{
+            color: white;
+        }
+        body{
+            background-color: black;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .buscador{
+            
+            background-color: rgb(73, 66, 66);
+            margin-top: 15px;
+        }
+        #buscar{
+            background-color: rgb(82, 76, 76);
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+    <input type="text" id="busca" placeholder="nome do filme" class="buscador">
+    <button id="buscar" class="buscador">buscar</button>
+    </div>
+    <div id="resultado"></div>
+
+    <script>
+        let buscarBotao =document.getElementById("buscar");
+        buscarBotao.addEventListener("click",buscar);
+
+        async function buscar(){
+     let termo = document.getElementById("busca").value;
+    let url = "https://www.omdbapi.com/?apikey=4a3b711b&s=" +encodeURIComponent(termo);
+    let response = await fetch(url);
+    let dados = await response.json();
+    let resultado = document.getElementById("resultado");
+
+    if(dados.Response == "False"){
+        resultado.innerHTML = "<h2>Filme não encontrado.</h2>";
+        return;
+    }
+    resultado.innerHTML = "";
+    for(let i = 0; i < dados.Search.length; i++){
+
+        resultado.innerHTML += `
+        <br><br>
+            <div style="border:1px solid white; margin:10px; padding:10px;">
+                <img src="${dados.Search[i].Poster}"><br>
+                <h2>${dados.Search[i].Title}</h2>
+                <p>Ano: ${dados.Search[i].Year}</p>
+                <p>Tipo: ${dados.Search[i].Type}</p>
+                <p>imdb: ${dados.Search[i].imdbID}</p>
+            </div>
+        `;
+
+    }
+
+}
+    </script>
+</body>
+</html>

@@ -11,7 +11,7 @@
    
    
 }
-#cronometro{
+#caderno{
     width:60%;
     background-color:gray;
     display:flex;
@@ -25,10 +25,6 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-}
-#tempo{
-    font-size:100px;
-    color:white;
 }
 .acoes{
     display:flex;
@@ -51,8 +47,10 @@ h2{
     font-size:30px;
 }
 
-#zerar{
-    margin-bottom:20px;
+#lista{
+    font-size: 40px;
+    line-height: 30px;
+    text-align: center;
 }
 .areatexto{
     margin-bottom: 30px;
@@ -64,24 +62,104 @@ h2{
     </style>
 </head>
 <body>
-    <div id="cronometro">
+    <div id="caderno">
         
         <textarea id="titulo" placeholder="titulo" rows="1" class="areatexto"></textarea>
         <textarea id="descricao" placeholder="descricao" rows="20" class="areatexto"></textarea>
         <div class="acoes">
         <button id="salvar" class="botao">salvar</button>
         <button id="excluir" class="botao">excluir</button>
+        <button id="novo" class="botao">novo</button>
         
         </div>
     </div>
     <div id="notas">
         <h2>Notas</h2>
-        <p id="paradastexto"></p>
+        <div id="lista"></div>
     
 
     </div>
     <script>
+let notas = JSON.parse(localStorage.getItem("notas")) || [];
 
+let notaSelecionada = -1;
+
+listar();
+let salvarBotao =document.getElementById("salvar");
+let excluirBotao =document.getElementById("excluir");
+let novoBotao =document.getElementById("novo");
+
+salvarBotao.addEventListener("click",salvar);
+excluirBotao.addEventListener("click",excluir);
+novoBotao.addEventListener("click",limpar);
+
+function salvar(){
+
+    let titulo = document.getElementById("titulo").value;
+    let descricao = document.getElementById("descricao").value;
+
+
+    if(titulo =="" && descricao ==""){
+        return;
+    }
+    if(notaSelecionada ==-1){
+
+        notas.push({
+            titulo: titulo,
+            descricao: descricao
+        });
+    }else{
+        notas[notaSelecionada].titulo =titulo;
+        notas[notaSelecionada].descricao =descricao;
+
+    }
+    localStorage.setItem("notas",JSON.stringify(notas));
+    listar();
+    limpar();
+}
+
+function listar(){
+    let lista =document.getElementById("lista");
+    lista.innerHTML="";
+    for(let i=0;i<notas.length;i++){
+
+        let p =document.createElement("p");
+        p.innerHTML = notas[i].titulo;
+        p.style.border ="3px solid black";
+        p.style.cursor ="pointer";
+        p.onclick = function(){
+            notaSelecionada =i;
+            document.getElementById("titulo").value =notas[i].titulo;
+            document.getElementById("descricao").value =notas[i].descricao;
+        }
+        lista.appendChild(p);
+    }
+}
+
+function excluir(){
+
+    if(notaSelecionada==-1){
+        alert("Selecione uma nota.");
+        return;
+    }
+
+    if(confirm("Deseja excluir esta nota?")){
+
+        notas.splice(notaSelecionada,1);
+        localStorage.setItem("notas",JSON.stringify(notas));
+        notaSelecionada =-1;
+        limpar();
+        listar();
+
+    }
+}
+
+function limpar(){
+    document.getElementById("titulo").value="";
+    document.getElementById("descricao").value="";
+    notaSelecionada=-1;
+
+}
 
 
 </script>
