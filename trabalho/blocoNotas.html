@@ -3,78 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cronometro</title>
+    <title>blocoNotas</title>
     <style>
   body{
     display:flex;
     height:100vh;
-    margin:0;
+   
+   
 }
-
 #cronometro{
     width:60%;
-    height:100%;
     background-color:gray;
-    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:left;
 }
-
-#paradas{
+#notas{
     width:40%;
-    height:100%;
     background-color:aliceblue;
-    text-align: center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
-
 #tempo{
     font-size:100px;
-    margin-top:30%;
     color:white;
 }
-
+.acoes{
+    display:flex;
+    justify-content:left;
+    margin-left: 40px;
+    gap:15px;
+    margin-top:20px;
+}
 .botao{
-    width:120px;
-    height:70px;
+    width:100px;
+    height:50px;
     font-size:20px;
-    margin:10px;
-    margin-top:10%;
-    border-radius:20%;
+    border-radius:15px;
     background-color:azure;
 }
-
 .botao:hover{
     background-color:antiquewhite;
 }
-
 h2{
-    text-align:center;
-    font-size: 30px;
+    font-size:30px;
 }
-#paradastexto{
-    font-size:40px;
-}
-#zerar{
-    position:absolute;
-    top: 60%;
-    right: 15%;
 
+#zerar{
+    margin-bottom:20px;
 }
+.areatexto{
+    margin-bottom: 30px;
+    margin:30px;
+    background-color: lightgrey;
+    font-size:18px;
+}
+
     </style>
 </head>
 <body>
     <div id="cronometro">
-        <p id="tempo"></p>
+        
+        <textarea id="titulo" placeholder="titulo" rows="1" class="areatexto"></textarea>
+        <textarea id="descricao" placeholder="descricao" rows="20" class="areatexto"></textarea>
+        <div class="acoes">
         <button id="salvar" class="botao">salvar</button>
         <button id="excluir" class="botao">excluir</button>
-        <button id="parar" class="botao">parar</button>
         
+        </div>
     </div>
-    <div id=paradas>
+    <div id="notas">
         <h2>Notas</h2>
         <p id="paradastexto"></p>
-        <button id="zerar" class="botao">zerar</button>
+    
 
     </div>
     <script>
+
 
 
 </script>
