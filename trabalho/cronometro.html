@@ -8,65 +8,67 @@
   body{
     display:flex;
     height:100vh;
-    margin:0;
+   
+   
 }
-
 #cronometro{
     width:60%;
-    height:100%;
     background-color:gray;
-    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
-
 #paradas{
     width:40%;
-    height:100%;
     background-color:aliceblue;
-    text-align: center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
-
 #tempo{
     font-size:100px;
-    margin-top:30%;
     color:white;
 }
-
+.acoes{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:50px;
+}
 .botao{
     width:120px;
     height:70px;
     font-size:20px;
-    margin:10px;
-    margin-top:10%;
-    border-radius:20%;
+    border-radius:15px;
     background-color:azure;
 }
-
 .botao:hover{
     background-color:antiquewhite;
 }
-
 h2{
-    text-align:center;
-    font-size: 30px;
+    font-size:30px;
 }
 #paradastexto{
     font-size:40px;
+    text-align:center;
+    flex:1;
+    width:100%;
 }
 #zerar{
-    position:absolute;
-    top: 60%;
-    right: 15%;
-
+    margin-bottom:20px;
 }
+
     </style>
 </head>
 <body>
     <div id="cronometro">
         <p id="tempo"></p>
+        <div class="acoes">
         <button id="iniciar" class="botao">iniciar</button>
         <button id="pausar" class="botao">pausar</button>
         <button id="parar" class="botao">parar</button>
-        
+        </div>
     </div>
     <div id=paradas>
         <h2>Paradas</h2>

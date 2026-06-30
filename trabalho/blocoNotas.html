@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cronometro</title>
+    <style>
+  body{
+    display:flex;
+    height:100vh;
+    margin:0;
+}
+
+#cronometro{
+    width:60%;
+    height:100%;
+    background-color:gray;
+    text-align:center;
+}
+
+#paradas{
+    width:40%;
+    height:100%;
+    background-color:aliceblue;
+    text-align: center;
+}
+
+#tempo{
+    font-size:100px;
+    margin-top:30%;
+    color:white;
+}
+
+.botao{
+    width:120px;
+    height:70px;
+    font-size:20px;
+    margin:10px;
+    margin-top:10%;
+    border-radius:20%;
+    background-color:azure;
+}
+
+.botao:hover{
+    background-color:antiquewhite;
+}
+
+h2{
+    text-align:center;
+    font-size: 30px;
+}
+#paradastexto{
+    font-size:40px;
+}
+#zerar{
+    position:absolute;
+    top: 60%;
+    right: 15%;
+
+}
+    </style>
+</head>
+<body>
+    <div id="cronometro">
+        <p id="tempo"></p>
+        <button id="salvar" class="botao">salvar</button>
+        <button id="excluir" class="botao">excluir</button>
+        <button id="parar" class="botao">parar</button>
+        
+    </div>
+    <div id=paradas>
+        <h2>Notas</h2>
+        <p id="paradastexto"></p>
+        <button id="zerar" class="botao">zerar</button>
+
+    </div>
+    <script>
+
+
+</script>
+</body>
+</html>
