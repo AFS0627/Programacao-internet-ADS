@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
 <title>8.html</title>
 
@@ -16,11 +18,11 @@ margin-top:50px;
 width:140px;
 height:100px;
 display:flex;
-align-items:flex-end;
 justify-content:center;
+align-items:flex-end;
+padding-bottom:5px;
 font-size:25px;
 font-weight:bold;
-padding-bottom:5px;
 }
 
 </style>
@@ -37,41 +39,43 @@ padding-bottom:5px;
 
 <script>
 
-let caixas = document.querySelectorAll(".caixa");
+let divs = document.querySelectorAll(".caixa");
 
-function corAleatoria(){
+function gerarCor(){
 
-let letras = "0123456789ABCDEF";
-let cor = "#";
+let letras="0123456789ABCDEF";
+let cor="#";
 
 for(let i=0;i<6;i++){
-cor += letras[Math.floor(Math.random()*16)];
+cor=cor+letras[Math.floor(Math.random()*16)];
 }
 
 return cor;
 
 }
 
-function trocarCores(){
+function mudar(){
 
-for(let i=0;i<caixas.length;i++){
+for(let i=0;i<divs.length;i++){
 
-let cor = corAleatoria();
+let c=gerarCor();
 
-caixas[i].style.backgroundColor = cor;
-caixas[i].innerText = cor;
-
-}
+divs[i].style.backgroundColor=c;
+divs[i].innerHTML=c;
 
 }
 
-trocarCores();
+}
 
-document.addEventListener("keydown",function(event){
+mudar();
 
-if(event.code == "Space"){
-event.preventDefault();
-trocarCores();
+document.addEventListener("keydown",function(e){
+
+if(e.code=="Space"){
+
+e.preventDefault();
+mudar();
+
 }
 
 });
@@ -79,4 +83,5 @@ trocarCores();
 </script>
 
 </body>
+
 </html>

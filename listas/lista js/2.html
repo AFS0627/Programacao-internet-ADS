@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
 <title>Exercício 2</title>
+
 </head>
 
 <body>
@@ -19,6 +22,8 @@
 <p id="pobject"></p>
 <p id="parray"></p>
 
+<br>
+
 <p id="op1"></p>
 <p id="op2"></p>
 <p id="op3"></p>
@@ -28,35 +33,39 @@
 
 function mostrar(){
 
-let texto = "Olá";
-let numero = 10;
-let logico = true;
-let indefinido;
-let nulo = null;
-let pessoa = {nome:"Arthur"};
-let lista = [1,2,3];
+let texto="Olá";
+let numero=10;
+let bool=true;
+let x;
+let nulo=null;
+let obj={nome:"Arthur"};
+let vetor=[1,2,3];
 
-document.getElementById("pstring").innerText = "String: " + typeof texto;
-document.getElementById("pnumero").innerText = "Number: " + typeof numero;
-document.getElementById("pboolean").innerText = "Boolean: " + typeof logico;
-document.getElementById("pundefined").innerText = "Undefined: " + typeof indefinido;
-document.getElementById("pnull").innerText = "Null: " + typeof nulo;
-document.getElementById("pobject").innerText = "Object: " + typeof pessoa;
-document.getElementById("parray").innerText = "Array: " + typeof lista;
+document.getElementById("pstring").innerHTML="String: "+typeof texto;
+document.getElementById("pnumero").innerHTML="Number: "+typeof numero;
+document.getElementById("pboolean").innerHTML="Boolean: "+typeof bool;
+document.getElementById("pundefined").innerHTML="Undefined: "+typeof x;
+document.getElementById("pnull").innerHTML="Null: "+typeof nulo;
+document.getElementById("pobject").innerHTML="Object: "+typeof obj;
+document.getElementById("parray").innerHTML="Array: "+typeof vetor;
 
-console.log(texto + numero);
-console.log(logico * numero);
-console.log(numero + logico);
-console.log(texto * numero);
+console.log(texto+numero);
+console.log(bool*numero);
+console.log(numero+bool);
+console.log(texto*numero);
 
-document.getElementById("op1").innerText = '"Olá" + 10 = ' + (texto + numero) + " -> junta o texto com o número.";
-document.getElementById("op2").innerText = "true * 10 = " + (logico * numero) + " -> true vale 1.";
-document.getElementById("op3").innerText = "10 + true = " + (numero + logico) + " -> true vale 1, resultado 11.";
-document.getElementById("op4").innerText = '"Olá" * 10 = ' + (texto * numero) + " -> retorna NaN porque não dá para multiplicar texto.";
+document.getElementById("op1").innerHTML='"Olá" + 10 = '+(texto+numero)+" -> junta texto com número.";
+
+document.getElementById("op2").innerHTML="true * 10 = "+(bool*numero)+" -> true vale 1.";
+
+document.getElementById("op3").innerHTML="10 + true = "+(numero+bool)+" -> resultado 11.";
+
+document.getElementById("op4").innerHTML='"Olá" * 10 = '+(texto*numero)+" -> NaN.";
 
 }
 
 </script>
 
 </body>
+
 </html>
