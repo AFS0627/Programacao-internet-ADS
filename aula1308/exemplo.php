@@ -71,7 +71,60 @@
         echo "consceito D - Insuficiente";
     }
 
-    ?>
+    ?><br><br><hr>
+
+    <?php
+    $numero = 4; 
+
+if ($numero % 2 == 0) {
+    echo "O número é par.";
+} else {
+    echo "O número é ímpar.";
+}
+$idade = 20;
+
+if ($idade >= 18) {
+    echo "Maior de idade.";
+} else {
+    echo "Menor de idade.";
+}
+$nota = 7;    
+$faltas = 10;  
+
+if ($nota >= 6 && $faltas < 15) {
+    echo "Aluno aprovado.";
+} else {
+    echo "Aluno reprovado.";
+}
+
+
+?><br><br><hr>
+<?php 
+
+$cursos = ["ADS", "Redes","informática"];
+
+echo "Total: " . count($cursos) . " cursos<br>";
+echo "O primeiro é: $cursos[0]<b><hr>";
+
+foreach ($cursos as $curso) {
+    echo "- $curso<br>";
+}
+
+echo "<hr>";
+
+$aluno = [
+    "nome" => "Bruno Lima",
+    "curso" => "ADS",
+    "nota" => 7.0
+];
+echo $aluno["nome"] . " está em " . $aluno["curso"] . "<br><hr>";
+foreach ($aluno as $campo => $valor) {
+echo "$campo: $valor<br>";
+}
+
+
+?>
+
 
 </body>
 
