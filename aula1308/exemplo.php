@@ -125,6 +125,59 @@ echo "$campo: $valor<br>";
 
 ?>
 
+<?php
+$colegas = ["a", "b", "c", "d", "e"];
+
+foreach ($colegas as $colega) {
+    echo "- $colega";
+}
+
+$eu = [
+    "nome" => "Arthur",
+    "curso" => "ADS",
+    "cidade" => "Gaspar",
+    "idade" => 25
+];
+
+echo "Sobre mim:\n";
+foreach ($eu as $chave => $valor) {
+    echo ucfirst($chave) . ": $valor\n";
+}
+
+$notas = [8.5, 7.0, 9.5, 6.0, 8.0];
+
+$soma = array_sum($notas);
+$quantidade = count($notas);
+$media = $soma / $quantidade;
+
+$maiorNota = max($notas);
+$menorNota = min($notas);
+
+foreach ($notas as $nota) {
+    echo "- $nota\n";
+}
+
+echo "\nMédia: $media\n";
+echo "Maior nota: $maiorNota\n";
+echo "Menor nota: $menorNota\n";
+?>
+
+<?php
+function saudacao($nome) {
+return "Olá, $nome!";
+}
+function conceito($nota) {
+if ($nota >= 9) return "A";
+if ($nota >= 7) return "B";
+if ($nota >= 6) return "C";
+return "D";
+}
+echo saudacao("Ana") . "<br>";
+echo saudacao("Bruno") . "<br><hr>";
+echo "Nota 9.5 = conceito " . conceito(9.5) . "<br>";
+echo "Nota 7.0 = conceito " . conceito(7.0) . "<br>";
+echo "Nota 4.0 = conceito " . conceito(4.0) . "<br>";
+?>
 
 </body>
 
